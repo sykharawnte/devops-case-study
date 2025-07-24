@@ -1,1 +1,3 @@
-# devops-case-study
+echo "## DevOps Case Study Project" >> README.md
+
+
