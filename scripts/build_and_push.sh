@@ -3,7 +3,7 @@
 set -euo pipefail
 
 GIT_COMMIT=$(git rev-parse --short HEAD)
-IMAGE="shubhadak/myapp:$GIT_COMMIT"
+IMAGE="shubhadak/newapp:$GIT_COMMIT"
 
 echo "[+] Building Docker image..."
 docker build -t $IMAGE .
