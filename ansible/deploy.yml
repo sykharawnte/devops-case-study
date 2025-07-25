@@ -18,8 +18,8 @@
           enabled: yes
 
       - name: Pull Docker image
-        command: docker pull shubhadak/myapp:latest
+        command: docker pull shubhadak/newapp:latest
 
 
       - name: Run Docker container
-        command: docker run -d -p 80:3000 shubhadak/myapp:latest
+        command: docker run -d -p 80:3000 shubhadak/newapp:latest
