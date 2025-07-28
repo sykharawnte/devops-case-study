@@ -6,7 +6,7 @@
 
 This project showcases a fully automated DevOps pipeline that builds, tests, provisions, configures, and deploys a Node.js web application on AWS Free Tier. It leverages powerful DevOps tools such as Git, Docker, Jenkins, Terraform, and Ansible to streamline the CI/CD process.
 
-🔗 **GitHub Repository:** [https://github.com/rahulbhatia3422/devops-nodejs-app]()
+🔗 **GitHub Repository:** [hhttps://github.com/sykharawnte/devops-case-study](https://github.com/sykharawnte/devops-case-study.git)
 
 ---
 
@@ -33,13 +33,9 @@ This project showcases a fully automated DevOps pipeline that builds, tests, pro
 
 ---
 
-Let me know if you'd like to add a project architecture diagram or explanation of the pipeline stages.
-
----
-
 ## 1️⃣ Architecture Diagram
 
-![DevOps Architecture](assets/Architecturess.jpg)
+![DevOps Architecture](assets/Architecturess.png)
 
 ---
 
