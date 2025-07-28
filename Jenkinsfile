@@ -11,7 +11,7 @@ pipeline {
                 git branch: 'develop', 
                 url: 'https://github.com/sykharawnte/devops-case-study.git'
                 script {
-                    // Store Git commit hash right after cloning
+                  
                     env.GIT_COMMIT = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
                 }
             }
@@ -58,13 +58,12 @@ pipeline {
         stage('Prepare Ansible') {
             steps {
                 script {
-                    // Get EC2 public IP from Terraform
+                  
                     env.EC2_IP = sh(
                         script: "cd infra && terraform output -raw public_ip", 
                         returnStdout: true
                     ).trim()
 
-                    // Create ansible directory and hosts.ini
                     sh 'mkdir -p ansible'
 
                     writeFile file: 'ansible/hosts.ini', text: """
