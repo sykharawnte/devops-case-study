@@ -18,7 +18,7 @@ The goal of this project is to provision an EC2 instance, configure the environm
 * **Ansible** configures the instance (installs Docker, Jenkins, etc.)
 * **Docker** builds and runs the application container
 
-![Architecture](assets/architecture.png)
+![Architecture](assets/Architecturess.png)
 
 ---
 
