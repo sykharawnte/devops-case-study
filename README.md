@@ -1,6 +1,5 @@
 
 
----
 
 ## 🚀 DevOps CI/CD Pipeline for Node.js Application
 
