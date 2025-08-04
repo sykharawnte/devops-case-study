@@ -1,25 +1,61 @@
-  - name: Deploy Docker App on EC2 (Ubuntu)
-    hosts: web
-    become: yes
-    tasks:
-      - name: Update apt cache
-        apt:
-          update_cache: yes
+  # - name: Deploy Docker App on EC2 (Ubuntu)
+  #   hosts: web
+  #   become: yes
+  #   tasks:
+  #     - name: Update apt cache
+  #       apt:
+  #         update_cache: yes
 
-      - name: Install Docker
-        apt:
-          name: docker.io
-          state: present
+  #     - name: Install Docker
+  #       apt:
+  #         name: docker.io
+  #         state: present
 
-      - name: Start Docker
-        service:
-          name: docker
-          state: started
-          enabled: yes
+  #     - name: Start Docker
+  #       service:
+  #         name: docker
+  #         state: started
+  #         enabled: yes
 
-      - name: Pull Docker image
-        command: docker pull shubhadak/newapp:latest
+  #     - name: Pull Docker image
+  #       command: docker pull shubhadak/newapp:latest
 
 
-      - name: Run Docker container
-        command: docker run -d -p 9000:3000 shubhadak/newapp:latest
+  #     - name: Run Docker container
+  #       command: docker run -d -p 9000:3000 shubhadak/newapp:latest
+
+
+
+- name: Deploy Docker App on EC2 (Ubuntu)
+  hosts: ec2
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Start and enable Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Pull Docker image from Docker Hub
+      docker_image:
+        name: shubhadak/newapp
+        tag: latest
+        source: pull
+
+    - name: Run Docker container
+      docker_container:
+        name: devops-app
+        image: shubhadak/newapp:latest
+        state: started
+        restart_policy: always
+        published_ports:
+          - "9000:3000"
