@@ -1,6 +1,6 @@
 
 - name: Deploy Docker App on EC2 (Ubuntu)
-  hosts: ec2
+  hosts: ec2   
   become: yes
   tasks:
     - name: Update apt cache
