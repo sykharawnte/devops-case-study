@@ -1,28 +1,4 @@
-  # - name: Deploy Docker App on EC2 (Ubuntu)
-  #   hosts: web
-  #   become: yes
-  #   tasks:
-  #     - name: Update apt cache
-  #       apt:
-  #         update_cache: yes
 
-  #     - name: Install Docker
-  #       apt:
-  #         name: docker.io
-  #         state: present
-
-  #     - name: Start Docker
-  #       service:
-  #         name: docker
-  #         state: started
-  #         enabled: yes
-
-  #     - name: Pull Docker image
-  #       command: docker pull shubhadak/newapp:latest
-
-
-  #     - name: Run Docker container
-  #       command: docker run -d -p 9000:3000 shubhadak/newapp:latest
 
 
 
