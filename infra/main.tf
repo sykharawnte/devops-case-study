@@ -34,10 +34,7 @@ resource "aws_route_table" "public_rt" {
     gateway_id = aws_internet_gateway.igw.id
   }
 
-  tags = {
-    Name = "public-rt"
-  }
-}
+ 
 
 resource "aws_route_table_association" "public_assoc" {
   subnet_id      = aws_subnet.public.id
@@ -70,9 +67,7 @@ resource "aws_security_group" "web_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name = "web-sg"
-  }
+
 }
 
 resource "aws_instance" "web" {
