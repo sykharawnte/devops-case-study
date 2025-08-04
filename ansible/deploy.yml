@@ -1,7 +1,4 @@
 
-
-
-
 - name: Deploy Docker App on EC2 (Ubuntu)
   hosts: ec2
   become: yes
